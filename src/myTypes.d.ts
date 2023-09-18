@@ -14,6 +14,11 @@ export interface Colleague {
   }
 
 export interface ColleagueHistory {
-  current: Colleague[],
-  former: Colleague[]
+    current: Colleague[],
+    former: Colleague[]
+}
+
+export interface EmailContact {
+    name: string;
+    email: string
 }
