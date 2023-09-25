@@ -14,7 +14,10 @@ const allOlder = (f: Friend[]) => f.map((fs) => `${fs.name} is now ${fs.age+=1}`
 console.log(allOlder(friends))
 
 
-const findFriends = (f: Friend[], keyWord: Function) => f.map((fs) => { if (keyWord(fs)) return fs.name })
+const findFriends = (
+  f: Friend[], keyWord: Function
+) =>
+  f.map((fs) => { if (keyWord(fs)) return fs.name })
 
 console.log(findFriends(friends, (friend: Friend) => friend.name.startsWith('Pa')));
 console.log(findFriends(friends, (friend: Friend) => friend.age < 35));
@@ -28,6 +31,17 @@ function highestExtension(cs: Colleague[]) {
   return result[cs.length - 1];
 }
 console.log(highestExtension(colleagues.current));
+
+
+function addInterest(f: Friend, interest: string) {
+  if (f.interests === undefined || f.interests === null) return "";
+  if (interest === undefined || interest === null || interest === "") return "";
+
+  f.interests.push(interest);
+  return f.interests;
+}
+
+console.log(addInterest(friends[1], 'Politics'))
 
 
 function addColleague(cs: Colleague[], name: string, dept: string, email: string ) {
